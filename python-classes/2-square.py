@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
 class Square:
+
+    """kjdddddddddddddddddddd
+    dddddddddddddddddddddd
+    dddddddddddddddddddddd"""
+
     def __init__(self, size=0):
         self.__size = size
         if not isinstance(size, int):
