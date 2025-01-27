@@ -4,7 +4,10 @@ class Square:
 
     """kjdddddddddddddddddddd
     dddddddddddddddddddddd
-    dddddddddddddddddddddd"""
+    ddddddddddddddddddddddddddd
+    ddddddddddddddddddddddddd
+    ddddddddddddddddddddddd
+    ddddddddddddddddddd"""
 
     def __init__(self):
         pass
