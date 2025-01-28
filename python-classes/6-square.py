@@ -34,7 +34,8 @@ class Square:
     def position(self, value):
         """Setter = modifier valeur attribut privé
         en s'assurant qu'elle est valide"""
-        if not isinstance(value, int)
+        if not isinstance(value, int):
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
 
