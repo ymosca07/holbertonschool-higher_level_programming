@@ -1,7 +1,13 @@
 #!/usr/bin/python3
+"""
+    A class that defines a square.
+"""
+
 
 class Square:
-
+    """
+    A class that defines a square.
+    """
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position 
@@ -34,21 +40,22 @@ class Square:
     def position(self, value):
         """Setter = modifier valeur attribut privé
         en s'assurant qu'elle est valide"""
-        if not isinstance(value, int):
+        if not (
+            isinstance(value, tuple)
+            and len(value) == 2
+            and all(isinstance(i, int) and i >= 0 for i in value)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def my_print(self):
-
-        c = 0
-
+        """Affiche le carré avec le caractère # en fonction de sa taille et position."""
         if self.__size == 0:
             print("")
-        else:
-            while c < self.__size:
-                i = 0
-                while i < self.__size:
-                    print("#", end="")
-                    i += 1
-                print("")
-                c += 1
+            return
+
+        [print("") for _ in range(self.__position[1])]
+
+        for _ in range(self.__size):
+            print(" " * self.__position[0], end="")
+            print("#" * self.__size)
