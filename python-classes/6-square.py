@@ -2,8 +2,9 @@
 
 class Square:
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         self.__size = size
+        self.__position = position 
 
     @property
     def size(self):
@@ -23,6 +24,17 @@ class Square:
     def area(self):
         """Retourne l'aire du carré"""
         return self.__size * self.__size
+    
+    @property
+    def position(self):
+        """Getter = accéder valeurt attribut privé"""
+        return self.__position
+    
+    @position.setter
+    def position(self, value):
+        """Setter = modifier valeur attribut privé
+        en s'assurant qu'elle est valide"""
+        if not isinstance(value, int)
 
     def my_print(self):
 

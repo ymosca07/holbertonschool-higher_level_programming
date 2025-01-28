@@ -2,21 +2,10 @@
 
 class Square:
     """
-    A class that defines a square.
-
-    This class includes methods to initialize the square,
-    retrieve its size,
-    set its size with proper validation, calculate
-    its area, and print the square.
+        A class that defines a square.
     """
-
     def __init__(self):
         """
-        A class that defines a square.
-
-        This class includes methods to initialize
-        the square, retrieve its size,
-        set its size with proper validation,
-        calculate its area, and print the square.
+        A def that defines a init.
         """
         pass

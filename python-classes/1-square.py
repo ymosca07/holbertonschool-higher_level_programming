@@ -2,9 +2,9 @@
 
 class Square:
 
-    """kjdddddddddddddddddddd
-    dddddddddddddddddddddd
-    dddddddddddddddddddddd"""
+    """
+        A class that defines a square.
+    """
 
     def __init__(self, size):
         self.__size = size
