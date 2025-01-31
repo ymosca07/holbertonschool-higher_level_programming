@@ -15,7 +15,6 @@ class Square:
     Returns :
         Current square area
     """
-    
     def __init__(self, size=0, position=(0, 0)):
         """ Initialize the square """
         self.size = size
