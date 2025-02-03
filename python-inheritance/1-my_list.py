@@ -5,4 +5,7 @@
 class MyList(list):
     """Ceci est une description"""
     def print_sorted(self):
-        print(sorted(self))
+        if isinstance(self, int) == 1:
+            raise TypeError("Ceci doit être un entier...")
+        else:
+            print(sorted(self))
