@@ -4,4 +4,5 @@
 
 def lookup(obj):
     """Description du chef"""
-    return obj
+    list = dir(obj)
+    return list
