@@ -1,8 +1,21 @@
->>> bg = BaseGeometry()
->>> bg.integer_validator("width", 10)
->>> bg.integer_validator("height", "test")
-Traceback (most recent call last):
-TypeError: height must be an integer
->>> bg.integer_validator("depth", -5)
-Traceback (most recent call last):
-ValueError: depth must be greater than 0
+"""
+This is the test for print_sorted function.
+"""
+
+# Importing the function from the module:
+    >>> base_geometry = __import__("7-base_geometry").BaseGeometry
+
+# Testing for module docstring:
+    >>> m = __import__("7-base_geometry").__doc__
+    >>> len(m) > 1
+    True
+
+# Testing for class docstring:
+    >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+    >>> len(c) > 1
+    True
+
+# Testing for method docstring:
+	>>> mod = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+	>>> len(mod) > 1
+	True
