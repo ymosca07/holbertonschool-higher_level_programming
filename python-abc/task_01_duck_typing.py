@@ -1,11 +1,12 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
+"""Ceci est une description"""
 from abc import ABC, abstractmethod
 import math
+"""Ceci est une description"""
 
 
 class Shape(ABC):
-
+    """Ceci est une description"""
     @abstractmethod
     def area(self):
         pass
@@ -16,30 +17,37 @@ class Shape(ABC):
 
 
 class Circle(Shape):
-
-    def __init__(self, radius):
-        self.__radius = radius
+    """Ceci est une description"""
+    def __init__(self, radius=0):
+        if not isinstance(radius, (int, float)):
+            raise TypeError("Radius must be a number")
+        self.radius = abs(radius)
 
     def area(self):
-        return math.pi * (self.__radius * self.__radius)
+        return (math.pi * (self.radius**2))
 
     def perimeter(self):
-        return 2 * math.pi * self.__radius
+        return (2 * math.pi * self.radius)
 
 
 class Rectangle(Shape):
-
-    def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
+    """Ceci est une description"""
+    def __init__(self, width=0, height=0):
+        self.width = width
+        self.height = height
 
     def area(self):
-        return self.__height * self.__width
+        return (self.width * self.height)
 
     def perimeter(self):
-        return (2 * self.__height) + (2 * self.__width)
+        return ((2 * self.width) + (2 * self.height))
 
 
-def shape_info(shape):
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+def shape_info(forme):
+    if hasattr(forme, 'area') and hasattr(forme, 'perimeter'):
+        area = forme.area()
+        perimeter = forme.perimeter()
+        print("Area: {}".format(area))
+        print("Perimeter: {}".format(perimeter))
+    else:
+        raise AttributeError("No such attribute")
