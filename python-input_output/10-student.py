@@ -10,6 +10,9 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """Ceci est une description"""
-        return self.__dict__
+        if attrs is type(list):
+            return self.first_name and self.last_name
+        else:
+            return self.__dict__
