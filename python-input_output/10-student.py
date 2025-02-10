@@ -12,7 +12,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """Ceci est une description"""
-        if attrs is type(list):
-            return self.first_name and self.last_name
-        else:
-            return self.__dict__
+        if isinstance(attrs, list):
+            return {attr: getattr(self, attr)
+                    for attr in attrs if hasattr(self, attr)}
+        return self.__dict__
