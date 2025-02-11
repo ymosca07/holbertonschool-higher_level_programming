@@ -27,5 +27,5 @@ class CustomObject:
     def deserialize(cls, filename):
         """Ceci est une description"""
         with open(filename, "rb") as file:
-            cls = pickle.load(file)
-        return cls
+            data = pickle.load(file)
+        return data
