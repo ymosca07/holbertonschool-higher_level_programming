@@ -6,12 +6,12 @@ import json
 
 def convert_csv_to_json(filename):
     """Ceci est une description"""
-    data = []
     try:
-        with open(filename, "r") as file:
+        with open(filename, "r", encoding="utf-8") as file:
             this = csv.DictReader(file)
-        with open(data, "w") as data:
-            json.dump(this, data)
+            data_list = list(this)
+        with open("data.json", "w", encoding="utf-8") as file:
+            json.dump(data_list, file)
         return True
     except FileNotFoundError:
         return False
