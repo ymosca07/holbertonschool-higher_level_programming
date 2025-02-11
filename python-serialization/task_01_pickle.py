@@ -19,13 +19,19 @@ class CustomObject:
 
     def serialize(self, filename):
         """Ceci est une description"""
-        with open(filename, "wb") as file:
-            pickle.dump(self, file)
-        return filename
+        try:
+            with open(filename, "wb") as file:
+                pickle.dump(self, file)
+            return filename
+        except:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
         """Ceci est une description"""
-        with open(filename, "rb") as file:
-            data = pickle.load(file)
-        return data
+        try:
+            with open(filename, "rb") as file:
+                data = pickle.load(file)
+            return data
+        except:
+            return None
