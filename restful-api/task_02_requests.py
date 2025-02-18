@@ -1,41 +1,43 @@
 import requests
 import csv
+"""Ceci est une description"""
 
 
 def fetch_and_print_posts():
+    """Ceci est une description"""
+
     url = "https://jsonplaceholder.typicode.com/posts"
+    response = requests.get(url)
 
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
+    print(f"Status Code: {response.status_code}")
 
-        print(f"Status Code: {response.status_code}")
-
+    if response.status_code == 200:
         posts = response.json()
         for post in posts:
             print(post["title"])
-
-    except requests.exceptions.RequestException as e:
-        print(f"Status Code Error: : {e}")
+    else:
+        print("Error fetching data")
 
 
 def fetch_and_save_posts():
+    """Ceci est une description"""
     url = "https://jsonplaceholder.typicode.com/posts"
+    response = requests.get(url)
 
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-
+    if response.status_code == 200:
         posts = response.json()
 
-        fieldnames = ["id", "title", "body"]
-        filtered_posts = [{key: post[key] for key in fieldnames}
-                          for post in posts]
-
-        with open("posts.csv", "w", newline="", encoding="utf-8") as file:
-            writer = csv.DictWriter(file, fieldnames=fieldnames)
+        with open("posts.csv", mode="w", newline="", encoding="utf-8") as file:
+            writer = csv.DictWriter(file, fieldnames=["id", "title", "body"])
             writer.writeheader()
-            writer.writerows(filtered_posts)
 
-    except requests.exceptions.RequestException as e:
-        print(f"Status Code Error: {e}")
+            for post in posts:
+                writer.writerow({
+                    "id": post["id"],
+                    "title": post["title"],
+                    "body": post["body"]
+                })
+
+        print("Data successfully saved to posts.csv")
+    else:
+        print("Error fetching data")
