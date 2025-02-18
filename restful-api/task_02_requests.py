@@ -37,7 +37,5 @@ def fetch_and_save_posts():
             writer.writeheader()
             writer.writerows(filtered_posts)
 
-        print("✅ Données enregistrées dans posts.csv")
-
     except requests.exceptions.RequestException as e:
         print(f"Status Code Error: {e}")
