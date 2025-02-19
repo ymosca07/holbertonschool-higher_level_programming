@@ -1,22 +1,14 @@
 #!/usr/bin/python3
-"""
-This modules defines a subclass of BaseHTTPRequestHandler
-"""
+"""Ceci est une description"""
 import http.server
 import socketserver
 import json
 
 
 class http_SubClass(http.server.BaseHTTPRequestHandler):
-    """
-    This subclass implement a method to handle GET requests.
-    """
+    """Ceci est une description"""
     def do_GET(self):
-        """
-        This methods is used to handle GET requests when accessing
-        'data', 'info' and 'status' endpoint.
-        And returns a 404 Not Found status for undefined endpoint.
-        """
+        """Ceci est une description"""
         if self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
