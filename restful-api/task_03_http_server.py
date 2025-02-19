@@ -4,6 +4,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 class SimpleAPIHandler(BaseHTTPRequestHandler):
+    """Ceci est une description"""
+
     def do_GET(self):
         """Ceci est une description"""
         if self.path == "/":
