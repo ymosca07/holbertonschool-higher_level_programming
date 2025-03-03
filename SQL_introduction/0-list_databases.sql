@@ -1,3 +1,2 @@
-"Ceci est une description"
-
+-- Liste toutes les bases de données disponibles sur le serveur MySQL
 SHOW DATABASES;
