@@ -1,2 +1,2 @@
 -- Countee  rrrr
-SELECT COUNT( * ) AS total_record FROM first_table
+SELECT COUNT(*) FROM first_table WHERE id = 89;
