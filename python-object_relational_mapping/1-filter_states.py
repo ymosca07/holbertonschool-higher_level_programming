@@ -12,7 +12,8 @@ if __name__ == "__main__":
                          db=database_name, port=3306)
     cursor = db.cursor()
     request = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC;"
-    cursor.execute(request,(first_letter + '%'))
+    cursor.execute(request, (first_letter + '%',))
+
     tables = cursor.fetchall()
     for table in tables:
         print(table)
