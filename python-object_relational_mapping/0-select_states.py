@@ -4,26 +4,25 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    # Connexion à la base de données MySQL avec les arguments passés en ligne de commande
-    conn = MySQLdb.connect(
+    # Connexion à MySQL avec les arguments passés en ligne de commande
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        username=sys.argv[1],   # Nom d'utilisateur MySQL
-        password=sys.argv[2], # Mot de passe MySQL
-        db_name=sys.argv[3],     # Nom de la base de données
-        charset="utf8"
+        user=sys.argv[1],   # Nom d'utilisateur MySQL
+        passwd=sys.argv[2], # Mot de passe MySQL
+        db=sys.argv[3],     # Nom de la base de données
     )
 
     # Création d'un curseur pour exécuter les requêtes SQL
-    cur = conn.cursor()
+    cur = db.cursor()
 
-    # Exécution de la requête SQL pour récupérer tous les états triés par id croissant
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    # Exécution de la requête SQL pour récupérer tous les états triés par ID croissant
+    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
 
-    # Récupération et affichage des résultats
+    # Affichage des résultats ligne par ligne
     for row in cur.fetchall():
         print(row)
 
     # Fermeture du curseur et de la connexion
     cur.close()
-    conn.close()
+    db.close()
