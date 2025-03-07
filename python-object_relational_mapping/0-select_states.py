@@ -13,7 +13,7 @@ if __name__ == "__main__":
         db=sys.argv[3],
     )
 
-    # Création d'un curseur pour exécuter les requêtes SQL
+    # Création d'un curseur pour exécuter les requêtes
     cur = db.cursor()
 
     # Exécution de la requête SQL pour récupérer
