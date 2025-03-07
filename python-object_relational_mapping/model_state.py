@@ -1,5 +1,16 @@
 #!/usr/bin/python3
 """
-Script qui liste tous les États de la base de données hbtn_0e_0_usa
+This module defines a State class that maps to the MySQL table 'states'.
 """
-import SQLAlchemy
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
+# Création d'une instance de Base pour SQLAlchemy
+Base = declarative_base()
+
+class State(Base):
+    """Class State that links to the MySQL table 'states'"""
+    __tablename__ = 'states'
+
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String(128), nullable=False)
