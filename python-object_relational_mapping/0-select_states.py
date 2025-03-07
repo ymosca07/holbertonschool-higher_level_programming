@@ -16,9 +16,8 @@ if __name__ == "__main__":
     # Création d'un curseur pour exécuter les requêtes
     cur = db.cursor()
 
-    # Exécution de la requête SQL pour récupérer
-    # tous les états triés par ID croissant
-    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
+    # Exécution de la requête SQL 
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Affichage des résultats ligne par ligne
     for row in cur.fetchall():
