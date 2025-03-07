@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script qui liste tous les États de la base de données hbtn_0e_0_usa.
+Script qui liste tous les États de la base de données hbtn_0e_0_usa
 """
 import MySQLdb
 import sys
@@ -18,4 +18,3 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
-    
