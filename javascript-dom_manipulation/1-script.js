@@ -1,0 +1,1 @@
+document.querySelector('header').style.color.click = '#FF0000'
