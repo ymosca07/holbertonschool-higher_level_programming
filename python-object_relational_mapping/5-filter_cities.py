@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Doc string"""
+
+
 import MySQLdb
 import sys
 
